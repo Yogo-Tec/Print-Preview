@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Bill Viewer</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ========================= -->
+<!-- HEADER -->
+<!-- ========================= -->
+
+<header class="topbar">
+
+<div class="logo">
+
+<h2>Bill Viewer</h2>
+
+</div>
+
+<div class="toolbar">
+
+<!-- Paper Size -->
+
+<div class="tool-group">
+
+<label>Paper</label>
+
+<select id="paperSize">
+
+<option value="a4" selected>A4</option>
+
+<option value="a3">A3</option>
+
+<option value="legal">Legal</option>
+
+<option value="letter">Letter</option>
+
+</select>
+
+</div>
+
+<!-- Zoom -->
+
+<div class="tool-group">
+
+<label>Zoom</label>
+
+<select id="zoomSelect">
+
+<option value="fit">Fit Screen</option>
+
+<option value="50">50%</option>
+
+<option value="75">75%</option>
+
+<option value="100" selected>100%</option>
+
+<option value="125">125%</option>
+
+<option value="150">150%</option>
+
+<option value="200">200%</option>
+
+</select>
+
+</div>
+
+<button id="zoomOut">−</button>
+
+<button id="zoomIn">+</button>
+
+<button id="fitBtn">Fit</button>
+
+<button id="resetBtn">Reset</button>
+
+<button id="printBtn">
+
+🖨 Print
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ========================= -->
+<!-- WORKSPACE -->
+<!-- ========================= -->
+<main class="workspace">
+
+    <div id="paperContainer">
+
+        <div id="paper" class="paper a4">
+
+            <!--
+            ======================================
+            BILL TEMPLATE LOADS HERE
+            ======================================
+            -->
+
+            <div id="templateContainer">
+
+                <div class="placeholder">
+
+                    <h1>Bill Template</h1>
+
+                    <p>
+                        Loading template...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

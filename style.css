@@ -1,0 +1,1004 @@
+/* ==========================================================
+   Bill Viewer
+   style.css
+   Part 1 - Base Layout
+   ========================================================== */
+
+:root{
+
+    --bg:#f2f4f8;
+
+    --workspace:#d8dde7;
+
+    --paper:#ffffff;
+
+    --toolbar:#ffffff;
+
+    --primary:#2563eb;
+
+    --border:#d6dbe5;
+
+    --text:#1f2937;
+
+    --muted:#6b7280;
+
+    --shadow:
+        0 8px 30px rgba(0,0,0,.10);
+
+    --radius:12px;
+
+}
+
+
+/* ========================================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html,
+body{
+
+    width:100%;
+
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:
+
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+}
+
+
+/* ========================================================== */
+/* HEADER */
+/* ========================================================== */
+
+.topbar{
+
+    height:72px;
+
+    background:var(--toolbar);
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 24px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+    box-shadow:
+
+        0 2px 8px rgba(0,0,0,.05);
+
+}
+
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.logo h2{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+
+/* ========================================================== */
+/* TOOLBAR */
+/* ========================================================== */
+
+.toolbar{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.tool-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+}
+
+
+.tool-group label{
+
+    font-size:13px;
+
+    color:var(--muted);
+
+}
+
+
+select{
+
+    min-width:120px;
+
+    height:42px;
+
+    padding:0 12px;
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    background:#fff;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+select:hover{
+
+    border-color:var(--primary);
+
+}
+
+
+button{
+
+    height:42px;
+
+    padding:0 18px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+button:hover{
+
+    transform:translateY(-1px);
+
+    opacity:.95;
+
+}
+
+
+button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ========================================================== */
+/* WORKSPACE */
+/* ========================================================== */
+
+.workspace{
+
+    height:calc(100vh - 72px);
+
+    overflow:auto;
+
+    background:var(--workspace);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:60px;
+
+}
+
+
+/* ========================================================== */
+/* PAPER CONTAINER */
+/* ========================================================== */
+
+#paperContainer{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    transform-origin:top center;
+
+    transition:
+
+        transform .25s ease;
+
+}
+
+
+/* ========================================================== */
+/* PAPER */
+/* ========================================================== */
+
+.paper{
+
+    background:var(--paper);
+
+    box-shadow:var(--shadow);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:
+
+        width .25s,
+
+        height .25s,
+
+        transform .25s;
+
+}
+
+
+/* ========================================================== */
+/* PLACEHOLDER */
+/* ========================================================== */
+
+.placeholder{
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    text-align:center;
+
+    padding:40px;
+
+}
+
+
+.placeholder h1{
+
+    font-size:40px;
+
+    color:var(--primary);
+
+}
+
+
+.placeholder p{
+
+    max-width:520px;
+
+    line-height:1.7;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+}
+
+
+/* ========================================================== */
+/* SCROLLBAR */
+/* ========================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#d9dee8;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#9aa5b1;
+
+    border-radius:100px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#6b7280;
+
+}
+
+
+/* ==========================================================
+   PAPER SIZES
+   ========================================================== */
+
+/* A4 Portrait */
+.paper.a4{
+    width:794px;
+    height:1123px;
+}
+
+/* A3 Portrait */
+.paper.a3{
+    width:1123px;
+    height:1587px;
+}
+
+/* Legal Portrait */
+.paper.legal{
+    width:816px;
+    height:1344px;
+}
+
+/* Letter Portrait */
+.paper.letter{
+    width:816px;
+    height:1056px;
+}
+
+
+/* ==========================================================
+   PAPER CONTENT
+   ========================================================== */
+
+.paper-content{
+
+    width:100%;
+    height:100%;
+    position:relative;
+
+    overflow:hidden;
+
+    background:white;
+
+}
+
+
+/* ==========================================================
+   ZOOM SUPPORT
+   ========================================================== */
+
+#paperContainer{
+
+    transform:scale(1);
+
+    transform-origin:top center;
+
+    will-change:transform;
+
+}
+
+
+/* ==========================================================
+   PAPER BORDER
+   ========================================================== */
+
+.paper{
+
+    border:1px solid #d9d9d9;
+
+    border-radius:4px;
+
+}
+
+
+/* ==========================================================
+   PAPER SHADOW
+   ========================================================== */
+
+.paper{
+
+    box-shadow:
+
+        0 0 0 1px rgba(0,0,0,.04),
+
+        0 8px 25px rgba(0,0,0,.12),
+
+        0 30px 60px rgba(0,0,0,.10);
+
+}
+
+
+/* ==========================================================
+   WORKSPACE GRID
+   ========================================================== */
+
+.workspace{
+
+    background:
+
+        linear-gradient(#dfe4ea 1px, transparent 1px),
+
+        linear-gradient(90deg,#dfe4ea 1px, transparent 1px),
+
+        #edf1f5;
+
+    background-size:24px 24px;
+
+}
+
+
+/* ==========================================================
+   CENTER PAPER
+   ========================================================== */
+
+.workspace{
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+
+/* ==========================================================
+   PREVIEW SPACING
+   ========================================================== */
+
+#paperContainer{
+
+    padding:40px;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width:1600px){
+
+    .workspace{
+
+        padding:40px;
+
+    }
+
+}
+
+@media (max-width:1400px){
+
+    .workspace{
+
+        padding:30px;
+
+    }
+
+}
+
+@media (max-width:1200px){
+
+    .workspace{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width:992px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:15px;
+
+        gap:15px;
+
+    }
+
+    .toolbar{
+
+        justify-content:center;
+
+        width:100%;
+
+    }
+
+    .workspace{
+
+        height:calc(100vh - 130px);
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:768px){
+
+    .toolbar{
+
+        gap:10px;
+
+    }
+
+    button{
+
+        padding:0 14px;
+
+    }
+
+    select{
+
+        min-width:95px;
+
+    }
+
+    .workspace{
+
+        padding:10px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   SMALL MOBILE
+   ========================================================== */
+
+@media (max-width:480px){
+
+    .logo h2{
+
+        font-size:20px;
+
+    }
+
+    .toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .tool-group{
+
+        justify-content:space-between;
+
+        width:100%;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    select{
+
+        width:100%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   PHASE 2 - PART 3
+   PRINT STYLES
+   ========================================================== */
+
+/* Default paper size */
+@page{
+    size:A4 portrait;
+    margin:0;
+}
+
+/* ==========================================================
+   PRINT MODE
+   ========================================================== */
+
+@media print{
+
+    html,
+    body{
+        width:100%;
+        height:auto;
+        overflow:visible;
+        background:#fff !important;
+        margin:0;
+        padding:0;
+    }
+
+    /* Hide preview UI */
+
+    .topbar,
+    .toolbar,
+    .logo{
+        display:none !important;
+    }
+
+    /* Hide workspace background */
+
+    .workspace{
+
+        background:#fff !important;
+
+        display:block;
+
+        padding:0 !important;
+
+        margin:0 !important;
+
+        overflow:visible;
+
+        height:auto !important;
+
+    }
+
+    /* Remove preview spacing */
+
+    #paperContainer{
+
+        padding:0 !important;
+
+        margin:0 auto !important;
+
+        transform:none !important;
+
+        display:block;
+
+    }
+
+    /* Print only paper */
+
+    .paper{
+
+        box-shadow:none !important;
+
+        border:none !important;
+
+        border-radius:0 !important;
+
+        margin:0 auto !important;
+
+        overflow:visible !important;
+
+        page-break-after:always;
+
+        page-break-inside:avoid;
+
+        break-after:page;
+
+        break-inside:avoid;
+
+    }
+
+    /* Hide placeholder text when real template is loaded */
+
+    .placeholder{
+
+        display:none;
+
+    }
+
+}
+
+
+/* ==========================================================
+   FULLSCREEN SUPPORT
+   ========================================================== */
+
+.workspace:fullscreen{
+
+    padding:60px;
+
+    background:#d8dde7;
+
+}
+
+.workspace:-webkit-full-screen{
+
+    padding:60px;
+
+}
+
+.workspace:-moz-full-screen{
+
+    padding:60px;
+
+}
+
+
+/* ==========================================================
+   PRINT OPTIMIZATION
+   ========================================================== */
+
+.paper{
+
+    -webkit-print-color-adjust:exact;
+
+    print-color-adjust:exact;
+
+}
+
+
+/* ==========================================================
+   SMOOTH TRANSITIONS
+   ========================================================== */
+
+.paper,
+#paperContainer,
+.workspace{
+
+    transition:
+
+        width .25s ease,
+
+        height .25s ease,
+
+        transform .25s ease,
+
+        box-shadow .25s ease;
+
+}
+
+
+/* ==========================================================
+   BUTTON EFFECTS
+   ========================================================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:50%;
+
+    width:0;
+
+    height:0;
+
+    background:rgba(255,255,255,.25);
+
+    border-radius:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.4s;
+
+}
+
+button:hover::after{
+
+    width:250px;
+
+    height:250px;
+
+}
+
+
+/* ==========================================================
+   FOCUS STATES
+   ========================================================== */
+
+button:focus,
+select:focus{
+
+    outline:none;
+
+    box-shadow:
+
+        0 0 0 3px rgba(37,99,235,.25);
+
+}
+
+
+/* ==========================================================
+   DISABLE TEXT SELECTION ON UI
+   ========================================================== */
+
+.topbar,
+.toolbar,
+button,
+select{
+
+    user-select:none;
+
+}
+
+
+/* ==========================================================
+   PAPER LOADING PLACEHOLDER
+   ========================================================== */
+
+.paper.loading{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.paper.loading::before{
+
+    content:"Loading Template...";
+
+    color:#64748b;
+
+    font-size:18px;
+
+}
+
+
+/* ==========================================================
+   OPTIONAL GRID TOGGLE
+   ========================================================== */
+
+.workspace.hide-grid{
+
+    background:#edf1f5;
+
+}
+
+
+/* ==========================================================
+   ANIMATION
+   ========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.paper{
+
+    animation:fadeIn .35s ease;
+
+}
+
+
+/* ==========================================================
+   PRINT
+========================================================== */
+
+@media print {
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    .topbar,
+    .toolbar {
+        display: none !important;
+    }
+
+    .workspace {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        overflow: visible;
+    }
+
+    #paperContainer {
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #paper {
+        margin: 0 auto;
+        box-shadow: none !important;
+        border: none !important;
+    }
+}

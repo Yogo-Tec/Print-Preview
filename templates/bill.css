@@ -1,0 +1,1474 @@
+/*==================================================
+    MODERN EXCEL INVOICE STYLESHEET
+    Part 1 : Reset, Variables, Layout,
+             Header & Company
+==================================================*/
+
+
+/*==================================================
+    RESET
+==================================================*/
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/*==================================================
+    A4 PAGE
+==================================================*/
+
+.invoice{
+
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    padding: 12mm;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+
+/*==================================================
+    COMMON TYPOGRAPHY
+==================================================*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    color:var(--text);
+
+    font-style:normal;
+
+}
+
+p,
+span,
+td,
+th,
+div{
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    color:var(--text);
+
+    font-size:11pt;
+
+}
+
+
+/*==================================================
+    HEADER
+==================================================*/
+
+.header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+
+/*==================================================
+    LEFT COMPANY SECTION
+==================================================*/
+
+.company{
+
+    width:48%;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* Main Brand */
+
+.company h1{
+
+    color: var(--primary);
+    font-size: 48pt;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: .8px;
+    margin-bottom: 10px;
+    margin-top: 70px;
+
+}
+
+
+/* Company Name */
+
+.company h2{
+
+    color:#000;
+
+    font-size:20pt;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    margin-bottom:8px;
+
+}
+
+
+/* Company Address */
+
+.company p{
+
+    color:#000;
+
+    font-size:11pt;
+
+    font-weight:400;
+
+    line-height:1.45;
+
+    margin-bottom:3px;
+
+}
+
+
+/*==================================================
+    COMPANY LINKS
+==================================================*/
+
+.company a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.company a:hover{
+
+    color:var(--secondary);
+
+    text-decoration:underline;
+
+}
+
+
+/*==================================================
+    RIGHT HEADER
+==================================================*/
+
+.invoice-right{
+
+    width:42%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:flex-end;
+
+}
+
+
+/* Company Logo */
+
+.logo{
+
+   width: 155px;
+    height: auto;
+    display: block;
+    margin-bottom: 18px;
+
+}
+
+
+/*==================================================
+    HEADER DIVIDER
+==================================================*/
+
+.header-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:var(--border-light);
+
+    margin:18px 0 25px;
+
+}
+
+
+/*==================================================
+    INVOICE INFORMATION
+==================================================*/
+
+.invoice-info{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+.invoice-info tr{
+
+    vertical-align:top;
+
+}
+
+.invoice-info td{
+
+    padding:4px 0;
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:11pt;
+
+    color:#000000;
+
+    vertical-align:top;
+
+    line-height:1.45;
+
+}
+
+.invoice-info .label{
+
+    width:135px;
+
+    color:var(--primary);
+
+    font-size:11pt;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+    padding-right:12px;
+
+}
+
+.invoice-info .value{
+
+    color:#000000;
+
+    font-size:11pt;
+
+    font-weight:400;
+
+}
+
+.invoice-info .value strong{
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+    DESCRIPTION
+==================================================*/
+
+.description{
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+}
+
+.description h4{
+
+    color:var(--primary);
+
+    font-size:12pt;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    letter-spacing:.3px;
+
+}
+
+.description p{
+
+    color:#000000;
+
+    font-size:11pt;
+
+    line-height:1.5;
+
+}
+
+
+/*==================================================
+    ITEMS TABLE
+==================================================*/
+
+.items{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+    margin-top:15px;
+
+    margin-bottom:20px;
+
+}
+
+
+/*==================================================
+    TABLE HEADER
+==================================================*/
+
+.items thead th{
+
+    background:#FFFFFF;
+
+    color:var(--primary);
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:12pt;
+
+    font-weight:700;
+
+    text-align:center;
+
+    vertical-align:middle;
+
+    padding:8px 6px;
+
+    border-top:.5pt solid var(--border-light);
+
+    border-bottom:.5pt solid var(--border-light);
+
+    border-left:.5pt solid var(--border);
+
+    border-right:.5pt solid var(--border);
+
+}
+
+.items thead th:first-child{
+
+    width:55px;
+
+}
+
+.items thead th:nth-child(2){
+
+    text-align:left;
+
+}
+
+.items thead th:nth-child(3){
+
+    width:80px;
+
+}
+
+.items thead th:nth-child(4){
+
+    width:90px;
+
+}
+
+.items thead th:nth-child(5){
+
+    width:95px;
+
+}
+
+.items thead th:last-child{
+
+    width:110px;
+
+}
+
+
+/*==================================================
+    TABLE BODY
+==================================================*/
+
+.items tbody tr{
+
+    height:32px;
+
+}
+
+.items tbody td{
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:11pt;
+
+    color:#000000;
+
+    padding:7px 8px;
+
+    vertical-align:middle;
+
+    border-top:.5pt solid var(--border-light);
+
+    border-bottom:.5pt solid var(--border-light);
+
+    border-left:.5pt solid var(--border);
+
+    border-right:.5pt solid var(--border);
+
+    background:#FFFFFF;
+
+}
+
+
+/*==================================================
+    COLUMN ALIGNMENT
+==================================================*/
+
+.items tbody td:nth-child(1){
+
+    text-align:center;
+
+}
+
+.items tbody td:nth-child(2){
+
+    text-align:left;
+
+}
+
+.items tbody td:nth-child(3){
+
+    text-align:center;
+
+}
+
+.items tbody td:nth-child(4),
+
+.items tbody td:nth-child(5),
+
+.items tbody td:nth-child(6){
+
+    text-align:right;
+
+}
+
+
+/*==================================================
+    TABLE ROW STATES
+==================================================*/
+
+.items tbody tr:hover{
+
+    background:#F7FBFF;
+
+}
+
+.items tbody tr:nth-child(even){
+
+    background:#FFFFFF;
+
+}
+
+.items tbody td:last-child{
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+    EMPTY ROWS
+==================================================*/
+
+.items tbody tr.empty-row td{
+
+    height:30px;
+
+    color:transparent;
+
+}
+
+
+/*==================================================
+    SUBTOTAL SEPARATOR
+==================================================*/
+
+.items tfoot td{
+
+    border-top:1pt solid var(--border);
+
+    border-left:.5pt solid var(--border);
+
+    border-right:.5pt solid var(--border);
+
+    padding:8px;
+
+    font-size:11pt;
+
+    font-weight:700;
+
+    background:#FFFFFF;
+
+}
+
+
+
+/*==================================================
+    BOTTOM AREA
+==================================================*/
+
+.bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:30px;
+
+    margin-top:15px;
+
+    width:100%;
+
+}
+
+
+/*==================================================
+    NOTES SECTION
+==================================================*/
+
+.notes{
+
+    width:68%;
+
+}
+
+.notes h4{
+
+    color:var(--primary);
+
+    font-size:12pt;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+
+    letter-spacing:.3px;
+
+}
+
+.notes p{
+
+    color:#000000;
+
+    font-size:11pt;
+
+    line-height:1.6;
+
+    text-align:justify;
+
+    margin-bottom:6px;
+
+}
+
+.notes ul{
+
+    margin-left:18px;
+
+    margin-top:8px;
+
+}
+
+.notes li{
+
+    font-size:11pt;
+
+    line-height:1.55;
+
+    color:#000000;
+
+    margin-bottom:4px;
+
+}
+
+
+/*==================================================
+    SUMMARY SECTION
+==================================================*/
+
+.summary{
+
+    width:30%;
+
+}
+
+.summary table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    border-spacing:0;
+
+}
+
+.summary tr{
+
+    background:#FFFFFF;
+
+}
+
+.summary td{
+
+    padding:8px 10px;
+
+    border:.5pt solid var(--border);
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:11pt;
+
+    color:#000000;
+
+}
+
+.summary td:first-child{
+
+    font-weight:700;
+
+    width:55%;
+
+}
+
+.summary td:last-child{
+
+    text-align:right;
+
+    width:45%;
+
+}
+
+
+/*==================================================
+    SUBTOTAL
+==================================================*/
+
+.summary tr.subtotal td{
+
+    background:#FFFFFF;
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+    TAX ROW
+==================================================*/
+
+.summary tr.tax td{
+
+    background:#FFFFFF;
+
+}
+
+
+/*==================================================
+    DISCOUNT ROW
+==================================================*/
+
+.summary tr.discount td{
+
+    background:#FFFFFF;
+
+}
+
+
+/*==================================================
+    GRAND TOTAL
+==================================================*/
+
+.summary tr.total td{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    font-size:12pt;
+
+    font-weight:700;
+
+    border:1pt solid var(--primary);
+
+}
+
+.summary tr.total td:last-child{
+
+    text-align:right;
+
+}
+
+
+/*==================================================
+    AMOUNT IN WORDS
+==================================================*/
+
+.summary h4{
+
+    margin-top:15px;
+
+    color:var(--primary);
+
+    font-size:11pt;
+
+    font-weight:700;
+
+    line-height:1.5;
+
+}
+
+
+/*==================================================
+    FOOTER
+==================================================*/
+
+footer{
+
+    margin-top:35px;
+
+    padding-top:20px;
+
+    border-top:1px solid var(--border-light);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:25px;
+
+}
+
+
+/*==================================================
+    BANK DETAILS
+==================================================*/
+
+.bank{
+
+    width:60%;
+
+}
+
+.bank h3{
+
+    color:var(--primary);
+
+    font-size:16pt;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.bank table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.bank td{
+
+    padding:4px 0;
+
+    font-size:11pt;
+
+    color:#000000;
+
+    vertical-align:top;
+
+}
+
+.bank td:first-child{
+
+    width:145px;
+
+    font-weight:700;
+
+}
+
+.bank td:last-child{
+
+    padding-left:10px;
+
+}
+
+
+/*==================================================
+    UPI SECTION
+==================================================*/
+
+.upi{
+
+    width:28%;
+
+    text-align:right;
+
+}
+
+.upi img{
+
+    width:110px;
+
+    height:auto;
+
+    display:inline-block;
+
+    margin-bottom:10px;
+
+}
+
+.upi h4{
+
+    color:var(--primary);
+
+    font-size:12pt;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+.upi p{
+
+    color:#000000;
+
+    font-size:11pt;
+
+    line-height:1.5;
+
+}
+
+
+/*==================================================
+    AUTHORIZED SIGNATURE
+==================================================*/
+
+.signature{
+
+    margin-top:40px;
+
+    text-align:right;
+
+}
+
+.signature .line{
+
+    width:180px;
+
+    border-top:1px solid var(--border);
+
+    margin-left:auto;
+
+    margin-bottom:6px;
+
+}
+
+.signature p{
+
+    font-size:11pt;
+
+    font-weight:700;
+
+    color:#000000;
+
+}
+
+
+/*==================================================
+    PAYMENT STATUS
+==================================================*/
+
+.status-paid{
+
+    color:#008000;
+
+    font-weight:700;
+
+}
+
+.status-pending{
+
+    color:#E67E22;
+
+    font-weight:700;
+
+}
+
+.status-overdue{
+
+    color:#C00000;
+
+    font-weight:700;
+
+}
+
+
+/*==================================================
+    END OF PART 3
+==================================================*/
+
+
+
+
+
+
+/*==================================================
+    THANK YOU SECTION
+==================================================*/
+
+.thanks{
+
+    margin-top:45px;
+
+    text-align:center;
+
+    page-break-inside:avoid;
+
+}
+
+.thanks h1{
+
+    color:#000000;
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:36pt;
+
+    font-weight:700;
+
+    line-height:1;
+
+    margin-bottom:10px;
+
+}
+
+.thanks h3{
+
+    color:#000000;
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:17pt;
+
+    font-weight:400;
+
+    line-height:1.4;
+
+    margin-bottom:18px;
+
+}
+
+.thanks p{
+
+    color:var(--text-light);
+
+    font-family:"Century Gothic", Arial, sans-serif;
+
+    font-size:11pt;
+
+    line-height:1.5;
+
+}
+
+
+/*==================================================
+    COMMON UTILITIES
+==================================================*/
+
+.text-left{
+
+    text-align:left;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.bold{
+
+    font-weight:700;
+
+}
+
+.normal{
+
+    font-weight:400;
+
+}
+
+.primary{
+
+    color:var(--primary);
+
+}
+
+.secondary{
+
+    color:var(--secondary);
+
+}
+
+.uppercase{
+
+    text-transform:uppercase;
+
+}
+
+.capitalize{
+
+    text-transform:capitalize;
+
+}
+
+.nowrap{
+
+    white-space:nowrap;
+
+}
+
+.mt-5{margin-top:5px;}
+.mt-10{margin-top:10px;}
+.mt-15{margin-top:15px;}
+.mt-20{margin-top:20px;}
+.mt-25{margin-top:25px;}
+.mt-30{margin-top:30px;}
+
+.mb-5{margin-bottom:5px;}
+.mb-10{margin-bottom:10px;}
+.mb-15{margin-bottom:15px;}
+.mb-20{margin-bottom:20px;}
+.mb-25{margin-bottom:25px;}
+.mb-30{margin-bottom:30px;}
+
+
+/*==================================================
+    TABLE HELPERS
+==================================================*/
+
+.items tbody td:first-child{
+
+    text-align:center;
+
+}
+
+.items tbody td:last-child{
+
+    font-weight:700;
+
+}
+
+.items tbody tr:last-child td{
+
+    border-bottom:1pt solid var(--border);
+
+}
+
+
+/*==================================================
+    PLACEHOLDER
+==================================================*/
+
+.placeholder{
+
+    color:#888888;
+
+    font-style:italic;
+
+}
+
+
+/*==================================================
+    LINKS
+==================================================*/
+
+a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+}
+
+a:hover{
+
+    color:var(--secondary);
+
+    text-decoration:underline;
+
+}
+
+
+/*==================================================
+    IMAGE HELPERS
+==================================================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/*==================================================
+    PRINT SETTINGS
+==================================================*/
+
+@page{
+
+    size:A4 portrait;
+
+    margin:10mm;
+
+}
+
+@media print{
+
+    html,
+    body{
+
+        background:#FFFFFF;
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    .invoice{
+
+        width:100%;
+
+        min-height:auto;
+
+        margin:0;
+
+        padding:0;
+
+        box-shadow:none;
+
+        border:none;
+
+    }
+
+    .header,
+    .bottom,
+    footer,
+    .thanks{
+
+        page-break-inside:avoid;
+
+    }
+
+    table{
+
+        page-break-inside:avoid;
+
+    }
+
+    tr{
+
+        page-break-inside:avoid;
+
+    }
+
+    thead{
+
+        display:table-header-group;
+
+    }
+
+    tfoot{
+
+        display:table-footer-group;
+
+    }
+
+}
+
+
+/*==================================================
+    RESPONSIVE
+==================================================*/
+
+@media screen and (max-width:900px){
+
+    .invoice{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:25px;
+
+    }
+
+    .header{
+
+        flex-direction:column;
+
+        gap:20px;
+
+    }
+
+    .company,
+    .invoice-right{
+
+        width:100%;
+
+    }
+
+    .invoice-right{
+
+        align-items:flex-start;
+
+    }
+
+    .bottom{
+
+        flex-direction:column;
+
+    }
+
+    .notes,
+    .summary{
+
+        width:100%;
+
+    }
+
+    footer{
+
+        flex-direction:column;
+
+    }
+
+    .bank,
+    .upi{
+
+        width:100%;
+
+        text-align:left;
+
+    }
+
+    .signature{
+
+        text-align:left;
+
+    }
+
+    .signature .line{
+
+        margin-left:0;
+
+    }
+
+}
+
+@media screen and (max-width:600px){
+
+    body{
+
+        padding:12px;
+
+    }
+
+    .invoice{
+
+        padding:18px;
+
+    }
+
+    .company h1{
+
+        font-size:34pt;
+
+    }
+
+    .company h2{
+
+        font-size:16pt;
+
+    }
+
+    .items thead th,
+    .items tbody td{
+
+        font-size:10pt;
+
+        padding:6px;
+
+    }
+
+    .summary td{
+
+        font-size:10pt;
+
+    }
+
+    .thanks h1{
+
+        font-size:28pt;
+
+    }
+
+    .thanks h3{
+
+        font-size:15pt;
+
+    }
+
+}
+
+
+/*==================================================
+    SELECTION
+==================================================*/
+
+::selection{
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+}
+
+
+/*==================================================
+    SCROLLBAR (SCREEN ONLY)
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#B8B8B8;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#9A9A9A;
+
+}
+
+
+/*==================================================
+    END OF FILE
+==================================================*/
+
+
+
+/* Default = A4 */
+
+.invoice{
+    width:100%;
+    height:100%;
+    padding:12mm;
+    box-sizing:border-box;
+}
+
+/* ---------- A4 ---------- */
+
+#a4 .invoice,
+.a4 .invoice{
+
+    font-size:12px;
+
+}
+
+.a4 .invoice h1{
+
+    font-size:58px;
+
+}
+
+.a4 .logo{
+
+    width:110px;
+
+}
+
+
+/* ---------- A3 ---------- */
+
+.a3 .invoice{
+
+    font-size:15px;
+
+}
+
+.a3 .invoice h1{
+
+    font-size:78px;
+
+}
+
+.a3 .logo{
+
+    width:150px;
+
+}

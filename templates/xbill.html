@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Template</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e5e5e5;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .invoice {
+            width: 210mm;
+            min-height: 297mm;
+            background: #fff;
+            padding: 18mm;
+            color: #111827;
+            box-shadow: 0 10px 25px rgba(0,0,0,.12);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .invoice-title {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #0b67c2;
+            margin-bottom: 20px;
+        }
+
+        .company-name {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .company-details {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            object-fit: contain;
+        }
+
+        .invoice-info {
+            width: 320px;
+            margin-top: 12px;
+        }
+
+        .info-row {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 12px;
+            padding: 4px 0;
+            font-size: 13px;
+        }
+
+        .info-row span:first-child {
+            color: #0b67c2;
+            font-weight: 700;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .invoice {
+                width: 210mm;
+                min-height: 297mm;
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice">
+
+        <div class="header">
+            <div>
+                <div class="invoice-title">INVOICE</div>
+
+                <div class="company-name" id="companyName">
+                    Sri Mahavishnu Colour Graphicz
+                </div>
+
+                <div class="company-details">
+                    107/13, R.K.N Road, Near Rathna Vilas Bus Stop,<br>
+                    Sivakasi, Tamil Nadu - 626189<br>
+                    colourgraphicdesigner@gmail.com<br>
+                    Phone : +91 87784 83441 · +91 84282 83232
+                </div>
+            </div>
+
+            <div>
+                <img src="assets/logo.png" alt="Logo" class="logo">
+
+                <div class="invoice-info">
+                    <div class="info-row">
+                        <span>PROJECT ID:</span>
+                        <span id="projectId">INV-001</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span>DATE:</span>
+                        <span id="invoiceDate">06-08-2026</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span>INVOICE ID:</span>
+                        <span id="invoiceNumber">MCG-2026-001</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span>BILL TO:</span>
+                        <span id="customerName">Customer Name</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span>PHONE:</span>
+                        <span id="customerPhone">+91 98765 43210</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phase 2 starts here -->
+
+
+<div style="margin-top: 10px; margin-bottom: 18px;">
+    <div style="color:#0b67c2;font-weight:700;font-size:13px;margin-bottom:6px;">
+        Project Description:
+    </div>
+
+    <div id="projectDescription" style="font-size:14px;color:#374151;">
+        Graphic design and printing service work.
+    </div>
+</div>
+
+<table style="width:100%;border-collapse:collapse;margin-top:14px;font-size:13px;">
+    <thead>
+        <tr style="background:#f3f4f6;color:#0b67c2;">
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:left;width:8%;">S.No</th>
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:left;width:40%;">Project</th>
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:left;width:18%;">Material</th>
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:center;width:10%;">Qty</th>
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:right;width:12%;">Price / Unit</th>
+            <th style="border:1px solid #d1d5db;padding:10px 8px;text-align:right;width:12%;">Amount</th>
+        </tr>
+    </thead>
+
+    <tbody id="invoiceItems">
+        <tr>
+            <td style="border:1px solid #e5e7eb;padding:8px;">1</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;">Website Banner Design</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;">Digital</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:center;">2</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:right;">₹500</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:right;">₹1,000</td>
+        </tr>
+
+        <tr>
+            <td style="border:1px solid #e5e7eb;padding:8px;">2</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;">Visiting Card Design</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;">Print</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:center;">5</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:right;">₹150</td>
+            <td style="border:1px solid #e5e7eb;padding:8px;text-align:right;">₹750</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div style="display:grid;grid-template-columns:1.6fr .8fr;gap:24px;margin-top:22px;">
+
+    <div>
+        <div style="color:#0b67c2;font-weight:700;margin-bottom:8px;">Notes:</div>
+
+        <div style="font-size:12px;line-height:1.6;color:#374151;">
+            Final design files will be shared for printing after receiving the 50% advance payment required before starting the work.<br>
+            Final artwork will be shared for approval with free minor changes within 3 days. Delivery within 7 days after final approval.<br>
+            Printing delivery only after full payment is received. Color and material may vary from the sample. T&amp;C Apply. No Refund Policy.<br>
+            For queries, contact +91 87784 83441 or colourgraphicdesigner@gmail.com
+        </div>
+    </div>
+
+    <div>
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+            <tr>
+                <td style="padding:7px 0;font-weight:600;">SUBTOTAL</td>
+                <td id="subtotal" style="padding:7px 0;text-align:right;">₹1,750</td>
+            </tr>
+
+            <tr>
+                <td style="padding:7px 0;font-weight:600;color:#0b67c2;">ADVANCE</td>
+                <td id="advance" style="padding:7px 0;text-align:right;">₹500</td>
+            </tr>
+
+            <tr>
+                <td style="padding:7px 0;font-weight:600;">AMOUNT PAID</td>
+                <td id="amountPaid" style="padding:7px 0;text-align:right;">₹500</td>
+            </tr>
+
+            <tr>
+                <td style="padding:9px 0;font-weight:700;border-top:1px solid #d1d5db;">GRAND TOTAL</td>
+                <td id="grandTotal" style="padding:9px 0;text-align:right;font-weight:700;border-top:1px solid #d1d5db;">₹1,750</td>
+            </tr>
+
+            <tr>
+                <td style="padding:9px 0;font-weight:700;color:#dc2626;">BALANCE</td>
+                <td id="balance" style="padding:9px 0;text-align:right;font-weight:700;color:#dc2626;">₹1,250</td>
+            </tr>
+        </table>
+
+        <div style="margin-top:18px;font-size:12px;color:#111827;font-weight:600;">
+            TOTAL AMOUNT: <span id="amountInWords">One Thousand Seven Hundred Fifty Rupees Only</span>
+        </div>
+    </div>
+</div>
+
+<div style="display:flex;justify-content:space-between;gap:24px;margin-top:34px;padding-top:18px;border-top:1px solid #e5e7eb;">
+
+    <div>
+        <div style="color:#0b67c2;font-weight:700;margin-bottom:10px;">Account Details:</div>
+
+        <div style="font-size:12px;line-height:1.7;color:#374151;">
+            Account Name : YOGESWARAN S<br>
+            Account Number : 23110005031545<br>
+            IFSC Code : TMBL0000231<br>
+            Branch : THIRUTHANGAL<br>
+            Bank : Tamilnad Mercantile Bank
+        </div>
+    </div>
+
+    <div style="text-align:right;">
+        <div style="font-size:12px;line-height:1.7;color:#374151;">
+            UPI : yogin143@okicici<br>
+            UPI : 8778483441@ibl<br>
+            GPay : +91 87784 83441<br>
+            GPay : +91 84282 83232
+        </div>
+    </div>
+</div>
+
+
+<div style="text-align:center;margin-top:56px;padding-top:28px;border-top:2px solid #f3f4f6;">
+
+    <div style="font-size:38px;font-weight:800;color:#111827;margin-bottom:8px;">
+        Thank you for choosing
+    </div>
+
+    <div style="font-size:20px;color:#374151;margin-bottom:18px;">
+        Sri Mahavishnu Colour Graphicz!
+    </div>
+
+    <div style="font-size:12px;color:#6b7280;">
+        This is a system-generated document and does not require a signature.
+    </div>
+</div>
+ </div>
+<script>
+const invoiceData = {
+    projectId: "PRJ-2026-001",
+    invoiceNumber: "MCG-2026-001",
+    customerName: "Rog IT Solutions",
+    customerPhone: "+91 98765 43210",
+    invoiceDate: "06-08-2026",
+    projectDescription: "Corporate graphic design and printing service work.",
+    subtotal: "₹1,750",
+    advance: "₹500",
+    amountPaid: "₹500",
+    grandTotal: "₹1,750",
+    balance: "₹1,250",
+    amountInWords: "One Thousand Seven Hundred Fifty Rupees Only"
+};
+
+function applyInvoiceData(data) {
+    Object.keys(data).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.textContent = data[key];
+        }
+    });
+}
+
+applyInvoiceData(invoiceData);
+</script>
+
+</body>
+</html>
+
+   

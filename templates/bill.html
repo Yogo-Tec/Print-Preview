@@ -1,0 +1,302 @@
+
+<div class="invoice">
+
+    <!-- Header -->
+    <header class="header">
+
+        <div class="company">
+
+            <h1>INVOICE</h1>
+
+            <h2>Sri Mahavishnu Colour Graphicz</h2>
+
+            <p>
+                1073/3, P.K.N Road,<br>
+                Near Rathna Vilas Bus Stop,<br>
+                Sivakasi, Tamil Nadu - 626189
+            </p>
+
+            <p>colourgraphiczdesigner@gmail.com</p>
+
+            <p>
+                Phone :
+                +91 87784 83441 ,
+                +91 84282 83232
+            </p>
+
+        </div>
+
+        <div class="invoice-right">
+
+            <img src="assets/logo.png" class="logo" alt="Company Logo">
+
+            <table class="invoice-info">
+
+                <tr>
+                    <td class="label">PROJECT ID:</td>
+                    <td>{{invoice.project_id}}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">DATE:</td>
+                    <td>{{invoice.date}}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">INVOICE ID:</td>
+                    <td>{{invoice.invoice_id}}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">BILL TO:</td>
+                    <td>{{customer.name}}</td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td>{{customer.address}}</td>
+                </tr>
+
+                <tr>
+                    <td class="label">PHONE:</td>
+                    <td>{{customer.phone}}</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </header>
+
+    <!-- Project Description -->
+
+    <section class="description">
+
+        <h4>Project Description:</h4>
+
+        <p>{{item1.product_description}}</p>
+
+    </section>
+
+    <!-- Table -->
+
+    <table class="items">
+
+        <thead>
+
+        <tr>
+
+            <th width="6%">S.No</th>
+
+            <th width="48%">Project</th>
+
+            <th width="16%">Material</th>
+
+            <th width="8%">Qty</th>
+
+            <th width="10%">Price / Unit</th>
+
+            <th width="12%">AMOUNT</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+            <td>1</td>
+            <td>{{item1.product_name}}</td>
+            <td>{{item1.material}}</td>
+            <td>{{item1.qty}}</td>
+            <td>{{item1.price_per_unit}}</td>
+            <td>{{item1.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>{{item2.product_name}}</td>
+            <td>{{item2.material}}</td>
+            <td>{{item2.qty}}</td>
+            <td>{{item2.price_per_unit}}</td>
+            <td>{{item2.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>{{item3.product_name}}</td>
+            <td>{{item3.material}}</td>
+            <td>{{item3.qty}}</td>
+            <td>{{item3.price_per_unit}}</td>
+            <td>{{item3.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>{{item4.product_name}}</td>
+            <td>{{item4.material}}</td>
+            <td>{{item4.qty}}</td>
+            <td>{{item4.price_per_unit}}</td>
+            <td>{{item4.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>5</td>
+            <td>{{item5.product_name}}</td>
+            <td>{{item5.material}}</td>
+            <td>{{item5.qty}}</td>
+            <td>{{item5.price_per_unit}}</td>
+            <td>{{item5.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>6</td>
+            <td>{{item6.product_name}}</td>
+            <td>{{item6.material}}</td>
+            <td>{{item6.qty}}</td>
+            <td>{{item6.price_per_unit}}</td>
+            <td>{{item6.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>7</td>
+            <td>{{item7.product_name}}</td>
+            <td>{{item7.material}}</td>
+            <td>{{item7.qty}}</td>
+            <td>{{item7.price_per_unit}}</td>
+            <td>{{item7.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>8</td>
+            <td>{{item8.product_name}}</td>
+            <td>{{item8.material}}</td>
+            <td>{{item8.qty}}</td>
+            <td>{{item8.price_per_unit}}</td>
+            <td>{{item8.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>9</td>
+            <td>{{item9.product_name}}</td>
+            <td>{{item9.material}}</td>
+            <td>{{item9.qty}}</td>
+            <td>{{item9.price_per_unit}}</td>
+            <td>{{item9.amount}}</td>
+        </tr>
+
+        <tr>
+            <td>10</td>
+            <td>{{item10.product_name}}</td>
+            <td>{{item10.material}}</td>
+            <td>{{item10.qty}}</td>
+            <td>{{item10.price_per_unit}}</td>
+            <td>{{item10.amount}}</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+    <!-- Bottom Section -->
+
+    <section class="bottom">
+
+        <div class="notes">
+
+            <h4>Notes:</h4>
+
+            <p>
+                Final design files will be shared for printing after receiving the 50% advance payment required before starting the work.
+                Final artwork will be shared for approval with free minor changes within 3 days.
+                Delivery within 7 days after final approval.
+                Printing delivery only after full payment is received.
+                Color and material may vary from the sample.
+                T&C Apply.
+                No Refund Policy.
+                For queries contact +91 87784 83441 or colourgraphiczdesigner@gmail.com.
+            </p>
+
+        </div>
+
+        <div class="summary">
+
+            <table>
+
+                <tr>
+                    <td>SUBTOTAL</td>
+                    <td>{{totals.subtotal}}</td>
+                </tr>
+
+                <tr>
+                    <td>ADVANCE</td>
+                    <td>{{totals.advance}}</td>
+                </tr>
+
+                <tr>
+                    <td>AMOUNT PAID</td>
+                    <td>{{totals.amount_paid}}</td>
+                </tr>
+
+                <tr>
+                    <td>GRAND TOTAL</td>
+                    <td>{{totals.grand_total}}</td>
+                </tr>
+
+                <tr>
+                    <td>BALANCE</td>
+                    <td>{{totals.balance}}</td>
+                </tr>
+
+            </table>
+
+            <h4>
+                TOTAL AMOUNT :
+                {{totals.amount_in_words}}
+            </h4>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="bank">
+
+            <h3>Account Details:</h3>
+
+            <p>Account Name : YOGESWARAN S</p>
+            <p>Account Number : 231100050311545</p>
+            <p>IFSC Code : TMBL0000231</p>
+            <p>Branch : THIRUTHANGAL</p>
+            <p>Bank : Tamilnad Mercantile Bank</p>
+
+        </div>
+
+        <div class="upi">
+
+            <p>UPI : yosign143@okicici</p>
+            <p>UPI : 8778483441@ibl</p>
+            <p>GPay : +91 87784 83441</p>
+            <p>GPay : +91 84282 83232</p>
+
+        </div>
+
+    </footer>
+
+    <section class="thanks">
+
+        <h1>Thank you for choosing</h1>
+
+        <h3>Sri Mahavishnu Colour Graphiz!</h3>
+
+        <p>
+            This is a system-generated document and does not require a signature.
+        </p>
+
+    </section>
+
+</div>
+
